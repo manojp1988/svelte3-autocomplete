@@ -27,6 +27,11 @@
     return s.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
   };
 
+  $: if(items) {
+    update(items);
+  }
+
+
   async function onChange(event) {
     fire("input", search);
     // Is the data given by an outside ajax request?

@@ -4,6 +4,7 @@
 
   let isAsync = true;
   let autoComplete;
+  let countries = [];
 
   async function loadApiData(event) {
     const res = await fetch(
@@ -11,7 +12,7 @@
     );
 
     const data = await res.json();
-    autoComplete.update(data.map(d => d.name));
+    countries = data.map(d => d.name);
   }
 </script>
 
@@ -30,8 +31,7 @@
 <div style="width: 300px">
   <AutoComplete
     className="input"
-    items={names}
+    items={countries}
     {isAsync}
-    bind:this={autoComplete}
     on:input={loadApiData} />
 </div>

@@ -369,7 +369,7 @@
     	return child_ctx;
     }
 
-    // (182:4) {#each results as result, i}
+    // (188:4) {#each results as result, i}
     function create_each_block(ctx) {
     	var li, html_tag, raw_value = ctx.result.label + "", t, li_class_value, dispose;
 
@@ -413,7 +413,7 @@
     	};
     }
 
-    // (190:2) {#if isLoading}
+    // (196:2) {#if isLoading}
     function create_if_block(ctx) {
     	var p, current;
 
@@ -655,6 +655,7 @@
         return s.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
       };
 
+
       async function onChange(event) {
         fire("input", search);
         // Is the data given by an outside ajax request?
@@ -778,6 +779,13 @@
     		if ('minChar' in $$props) $$invalidate('minChar', minChar = $$props.minChar);
     		if ('isAsync' in $$props) $$invalidate('isAsync', isAsync = $$props.isAsync);
     		if ('$$scope' in $$props) $$invalidate('$$scope', $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$$.update = ($$dirty = { items: 1 }) => {
+    		if ($$dirty.items) { if(items) {
+            console.log(items);
+            update(items);
+          } }
     	};
 
     	return {
