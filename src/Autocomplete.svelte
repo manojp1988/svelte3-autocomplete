@@ -27,10 +27,9 @@
     return s.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
   };
 
-  $: if(items) {
+  $: if (items) {
     update(items);
   }
-
 
   async function onChange(event) {
     fire("input", search);
@@ -84,11 +83,11 @@
       if (arrowCounter === -1) {
         arrowCounter = 0; // Default select first item of list
       }
-      fireclose(arrowCounter);
+      close(arrowCounter);
     } else if (event.keyCode === 27) {
       // Escape
       event.preventDefault();
-      fireclose();
+      close();
     }
   }
 
