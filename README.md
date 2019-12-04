@@ -40,3 +40,5 @@ In async case, you need to call this method to send data to the component.
 ```javascript
 autoComplete.update(data.map(d => d.name));
 ```
+
+test
